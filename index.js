@@ -18,9 +18,9 @@ const store = new sessionStore({
   db: db,
 });
 
-// (async () => {
-//   await db.sync();
-// })();
+(async () => {
+  await db.sync();
+})();
 
 const server = process.env.APP_PORT || 5000;
 
@@ -48,7 +48,7 @@ app.use(UserRoute);
 app.use(ProductRoute);
 app.use(AuthRoute);
 
-// store.sync();
+store.sync();
 
 app.listen(server, () => {
   console.log("server running", process.env.APP_PORT);
